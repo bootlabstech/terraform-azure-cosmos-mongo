@@ -38,3 +38,19 @@ variable max_staleness_prefix {
   type        = number
   description = "name of the resource group where all the resources will be created"
 }
+
+variable "kind" {
+  type   = string
+  description = "Specifies the Kind of CosmosDB to create - possible values are GlobalDocumentDB and MongoDB"
+  default = "MongoDB"
+}
+
+variable "capabilities" {
+  type = string
+  description = "Configures the capabilities to enable for this Cosmos DB account"
+}
+
+variable "location" {
+  type = string
+  description = "Specifies the supported Azure location where the resource exists˝"
+}
