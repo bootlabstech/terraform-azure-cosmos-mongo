@@ -22,20 +22,20 @@ variable "consistency_level" {
 variable "mongodb_throughput" {
   type        = number
   description = "name of the resource group where all the resources will be created"
-  default = 400
+  default     = 400
 }
 
 variable "max_interval_in_seconds" {
   type        = number
   description = "name of the resource group where all the resources will be created"
-  default = 5
+  default     = 5
 
 }
 
 variable "max_staleness_prefix" {
   type        = number
   description = "name of the resource group where all the resources will be created"
-  default = 100
+  default     = 100
 
 }
 

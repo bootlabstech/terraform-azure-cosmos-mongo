@@ -14,7 +14,6 @@ resource "azurerm_cosmosdb_account" "db" {
   offer_type                = var.offer_type
   kind                      = var.kind
   enable_automatic_failover = true
-  tags                      = var.tags
 
   capabilities {
     name = var.capabilities
@@ -42,4 +41,9 @@ resource "azurerm_cosmosdb_mongo_database" "mongodb" {
   resource_group_name = var.resource_group_name
   account_name        = azurerm_cosmosdb_account.db.name
   throughput          = var.mongodb_throughput
+  lifecycle {
+    ignore_changes = [
+      tags,
+    ]
+  }
 }
